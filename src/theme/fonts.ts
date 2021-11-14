@@ -1,5 +1,5 @@
 const fonts = {
-  label: 'BigShouldersText-Light',
+  label: 'serif',
 };
 
 export default fonts;
