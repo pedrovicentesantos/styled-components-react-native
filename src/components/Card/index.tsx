@@ -1,18 +1,15 @@
 import React from 'react';
-
 import { Container, Label, Description } from './styles';
-
 import { ICardProps, CardStatus, TCardStatusVariant } from './interface';
 
 const Card = ({ amount, status } : ICardProps) => {
+  const isStatusReversed = status === 'REVERTIDO';
   const statusVariant: TCardStatusVariant = {
-    PAGO: { color: 'success-400', isStatusReversed: status === 'REVERTIDO' },
-    EM_ABERTO: { color: 'warning-400', isStatusReversed: status === 'REVERTIDO' },
-    EM_ATRASO: { color: 'error-400', isStatusReversed: status === 'REVERTIDO' },
-    REVERTIDO: { color: 'neutral-400', isStatusReversed: status === 'REVERTIDO' },
+    PAGO: { color: 'success-400', isStatusReversed },
+    EM_ABERTO: { color: 'warning-400', isStatusReversed },
+    EM_ATRASO: { color: 'error-400', isStatusReversed },
+    REVERTIDO: { color: 'neutral-400', isStatusReversed },
   };
-
-  // const isStatusReversed = status === 'REVERTIDO';
 
   return (
     <Container>
